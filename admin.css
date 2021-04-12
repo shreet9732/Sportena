@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background: #1E2833;
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-weight: 200;
+}
+
+.welcome {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, 50%);
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+h4 {
+  font-weight: 300;
+  margin: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #3B536B;
+}
+h1 span {
+  font-weight: 200;
+  color: #FF7475;
+}
+
+.welcome, .form-panel {
+  background: linear-gradient(135deg, #3B536B, #1C3956);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.1), 2px 2px 16px 0px rgba(0, 0, 0, 0.2), 4px 16px 64px 0px rgba(0, 0, 0, 0.5);
+}
+
+.welcome {
+  background: white;
+  position: relative;
+  width: 48rem;
+  height: 20rem;
+  margin: 8em auto;
+  color: #3B536B;
+  background: linear-gradient(135deg, white, #F4F6F7);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  padding: 2em 2em 10em;
+  transition: transform 100ms ease;
+}
+.info p {
+  margin: 0;
+}
+.info .switch-signin, .info .switch-signup {
+  position: absolute;
+  bottom: 4em;
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+.info .switch-signup {
+  opacity: 0;
+  pointer-events: none;
+}
+.info.shift {
+  transform: translate(24rem, 0);
+}
+.info.shift .switch-signup {
+  opacity: 1;
+  pointer-events: auto;
+}
+.info.shift .switch-signin {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-panel {
+  position: absolute;
+  top: -3.5em;
+  right: 3.5rem;
+  width: 20em;
+  height: 25em;
+  padding-top: 2em;
+  color: white;
+  overflow: hidden;
+  transition: transform 300ms ease;
+}
+.form-panel .signin, .form-panel .signup {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20em;
+  box-sizing: border-box;
+  padding: 2rem;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 400ms ease, transform 200ms ease;
+}
+.form-panel .signin {
+  transform: translate(-22.5rem, -50%);
+  opacity: 0;
+}
+.form-panel .signin h2 {
+  margin-bottom: 2rem;
+}
+.form-panel .signin input[type=submit] {
+  margin-top: 2rem;
+}
+.form-panel.shift {
+  transform: translatex(-21rem);
+}
+.form-panel.shift .signin {
+  transform: translate(0, -50%);
+  opacity: 1;
+}
+.form-panel.shift .signup {
+  transform: translate(22.5rem, -50%);
+  opacity: 0;
+}
+
+.field {
+  text-align: left;
+  position: relative;
+}
+.field label {
+  display: block;
+  position: absolute;
+  top: 0;
+  transform-origin: left top;
+  font-size: 1.2rem;
+  font-weight: 200;
+  transform: translatey(0.5rem);
+  transition: transform 100ms;
+}
+.field input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem 0rem 0.5rem;
+  color: white;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  outline: none;
+}
+.field input.touched + label, .field input:focus + label {
+  transform: scale(0.75);
+}
+
+button, input[type=submit] {
+  -webkit-appearance: none;
+  display: inline-block;
+  background: #FF7475;
+  border: #FF7475 2px solid;
+  font-size: 1.25em;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: inherit;
+  color: white;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: color 100ms ease-in-out, background 100ms ease-in-out;
+  margin-top: 1rem;
+}
+button:hover, input[type=submit]:hover {
+  color: #FF7475;
+  background: transparent;
+}
+
+button {
+  background: transparent;
+  color: #FF7475;
+}
+button:hover {
+  color: white;
+  background: #FF7475;
+}
